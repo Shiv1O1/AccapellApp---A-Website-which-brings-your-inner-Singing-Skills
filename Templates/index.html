@@ -1,0 +1,202 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>AccapellApp</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Music template project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{%static 'styles/bootstrap-4.1.2/bootstrap.min.css' %}">
+	<link href="{%static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.3.4/owl.carousel.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.3.4/owl.theme.default.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'plugins/OwlCarousel2-2.3.4/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'styles/main_styles.css' %}">
+	<link rel="stylesheet" type="text/css" href="{%static 'styles/responsive.css' %}">
+</head>
+<body>
+
+	<div class="super_container">
+
+		<!-- Header -->
+
+		<header class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_content d-flex flex-row align-items-center justify-content-center">
+
+							<!-- Logo -->
+							<div class="logo">
+								<a href="/" class="d-flex flex-row align-items-end justify-content-start">
+									<span class="logo_bars d-flex flex-row align-items-end justify-content-between"><span></span><span></span><span></span><span></span><span></span></span>
+									<span class="logo_text">acapella</span>
+								</a>
+							</div>
+
+							<!-- Main Navigation -->
+							<nav class="main_nav">
+								<ul class="d-flex flex-row align-items-center justify-content-start">
+									<li class="active"><a href="/">Home</a></li>
+									<li><a href="/upload/">Upload Music</a></li>
+									<li><a href="/publicsongs/">PublicSongs</a></li>
+									{% if user.is_authenticated %}
+									<li><a href="/mylist/">My list</a></li>
+									{% endif %}
+								</ul>
+							</nav>
+
+							<div class="log_reg d-flex flex-row align-items-center justify-content-start">
+								<ul class="d-flex flex-row align-items-start justify-content-start">
+									{% if user.is_authenticated %}
+									<li>Hello, {{user.first_name}}</li>
+									<li><a href="/accounts/logout/">Logout</a></li>
+									{% else %}
+									<li><a href="/accounts/login/">Login</a></li>
+									<li><a href="/accounts/signup/">Register</a></li>
+									{% endif %}
+								</ul>
+								<!-- Hamburger -->
+								<div class="hamburger d-flex flex-column align-items-end justify-content-between"><div></div><div></div><div></div></div>
+							</div>
+						</div>
+				</div>
+			</div>
+	</div>
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu">
+		<div class="menu_container">
+			<div class="menu_background"></div>
+			<div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+			<div class="menu_content d-flex flex-column align-items-center justify-content-start">
+				<nav class="menu_nav">
+					<ul class="d-flex flex-column align-items-center justify-content-start">
+						<li><a href="/">Home</a></li>
+						<li><a href="/upload/">Upload Music</a></li>
+						<li><a href="publicsongs.html">Publicsongs</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+	<!-- Home -->
+
+	<div class="home">
+
+		<!-- Home Slider -->
+		<div class="home_slider_container">
+			<div class="owl-carousel owl-theme home_slider">
+
+				<!-- Slide -->
+				<div class="slide">
+					<div class="background_image" style="background-image: url({%static 'images/index.jpg' %})"></div>
+					<div class="home_container">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="home_content">
+										<div class="home_title_container text-center">
+											<div class="home_title islive text-center"><h1>Accapell <span>App.</span></h1></div>
+											<div><h3 style="color: #08C016">Your personal music voice separation app with engaging visualizer.</h3></div>
+										</div>
+										<!-- <div class="tickets_form_container">
+											<form action="#" class="tickets_form">
+												<div class="d-flex flex-md-row flex-column align-items-start justify-content-md-between justify-content-start">
+													<div class="tickets_form_inputs d-flex flex-row align-items-start justify-content-between">
+														<div class="custom_dropdown tickets_form_input cdd">
+															<div class="custom_dropdown_selected cdd">Event</div>
+															<ul class="cdd">
+																<li>Event 1</li>
+																<li>Event 2</li>
+																<li>Event 3</li>
+															</ul>
+														</div>
+														<input type="text" class="tickets_form_input" placeholder="Tickets" required="required">
+													</div>
+													<button class="tickets_form_button button"><span>get your tickets</span></button>
+												</div>
+											</form>
+										</div> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="background_image" style="{%static 'background-image:url(images/footer.jpg)' %}"></div>
+		<div class="footer_content">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+
+						<!-- Logo -->
+						<div class="logo">
+							<a href="/" class="d-flex flex-row align-items-end justify-content-start">
+								<span class="logo_bars d-flex flex-row align-items-end justify-content-between"><span></span><span></span><span></span><span></span><span></span></span>
+								<span class="logo_text">acapella</span>
+							</a>
+						</div>
+
+						<!-- Footer Social -->
+						<div class="footer_social">
+							<ul class="d-flex flex-row align-items-center justify-content-center">
+								<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+								<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer_bar">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="copyright text-center">
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+	</div>
+
+	<script src="{%static 'js/jquery-3.3.1.min.js' %}"></script>
+	<script src="{%static 'styles/bootstrap-4.1.2/popper.js' %}"></script>
+	<script src="{%static 'styles/bootstrap-4.1.2/bootstrap.min.js' %}"></script>
+	<script src="{%static 'plugins/greensock/TweenMax.min.js' %}"></script>
+	<script src="{%static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+	<script src="{%static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+	<script src="{%static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+	<script src="{%static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+	<script src="{%static 'plugins/OwlCarousel2-2.3.4/owl.carousel.js' %}"></script>
+	<script src="{%static 'plugins/jPlayer/jquery.jplayer.min.js' %}"></script>
+	<script src="{%static 'plugins/jPlayer/jplayer.playlist.min.js' %}"></script>
+	<script src="{%static 'plugins/easing/easing.js' %}"></script>
+	<script src="{%static 'plugins/progressbar/progressbar.min.js' %}"></script>
+	<script src="{%static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+	<script src="{%static 'plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+	<script src="{%static 'js/custom.js' %}"></script>
+</body>
+</html>

@@ -1,6 +1,3 @@
-# AccapellApp---A-Website-which-brings-your-inner-Singing-Skills
-Developed an end to end Web Application where immerging singers can record their voice, combine it with background music, compare their voice with original singers’ voice and also see the visualization effects for their songs.
-
 # AcapellaApp
 Website for singers to record voice, combine with background music, compare with original song with engaging visualizers and many more
 
@@ -50,5 +47,4 @@ As discussed spleeter doesn't produce 100% results and takes too much time for v
 Moreover this work can be extended by developing an android app for the same purpose.
 # Conclusion
 Thus the website discussed above helps the singer to split a song into vocals and music, record voice, combine his voice with background music, compare his voice with singer voice and many more.
-
 
